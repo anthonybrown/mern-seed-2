@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import HeaderTemplate from './template/header';
-import FooterTemplate from './template/footer';
+import React, { Component } from 'react'
+import HeaderTemplate from './template/header'
+import FooterTemplate from './template/footer'
 
 class App extends Component {
   render() {
@@ -14,8 +14,8 @@ class App extends Component {
 
       <FooterTemplate />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

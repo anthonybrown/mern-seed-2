@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router'
 
 class HeaderTemplate extends Component {
   renderLinks() {
@@ -28,7 +28,7 @@ class HeaderTemplate extends Component {
         <li key={3}>
           <Link to="register">Register</Link>
         </li>
-      ];
+      ]
     }
   }
 
@@ -55,14 +55,14 @@ class HeaderTemplate extends Component {
         </div>
         </nav>
       </div>
-    );
+    )
   }
 }
 
 function mapStateToProps(state) {
   return {
     authenticated: state.auth.authenticated
-  };
+  }
 }
 
-export default connect(mapStateToProps)(HeaderTemplate);
+export default connect(mapStateToProps)(HeaderTemplate)

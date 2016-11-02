@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router'
 
 class FooterTemplate extends Component {
   renderLinks() {
@@ -15,7 +15,7 @@ class FooterTemplate extends Component {
         <li key={3}>
           <Link to="logout">Logout</Link>
         </li>
-      ];
+      ]
     } else {
       return [
         // Unauthenticated navigation
@@ -28,14 +28,14 @@ class FooterTemplate extends Component {
         <li key={3}>
           <Link to="register">Register</Link>
         </li>
-      ];
+      ]
     }
   }
 
   render() {
 
-    const d = new Date();
-    const year = d.getFullYear();
+    const d = new Date()
+    const year = d.getFullYear()
 
     return (
       <footer>
@@ -52,14 +52,14 @@ class FooterTemplate extends Component {
           </div>
         </div>
       </footer>
-    );
+    )
   }
 }
 
 function mapStateToProps(state) {
   return {
     authenticated: state.auth.authenticated
-  };
+  }
 }
 
-export default connect(mapStateToProps, null)(FooterTemplate);
+export default connect(mapStateToProps, null)(FooterTemplate)

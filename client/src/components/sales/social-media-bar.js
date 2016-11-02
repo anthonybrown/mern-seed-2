@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class SocialMediaBar extends Component {
   render() {
@@ -12,8 +12,8 @@ class SocialMediaBar extends Component {
           })}
         </ul>
       </div>
-    );
+    )
   }
 }
 
-export default SocialMediaBar;
+export default SocialMediaBar

@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
-import { Link } from 'react-router';
-import { loginUser } from '../../actions/auth';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Field, reduxForm } from 'redux-form'
+import { Link } from 'react-router'
+import { loginUser } from '../../actions/auth'
 
 const form = reduxForm({
   form: 'login'
-});
+})
 
 class Login extends Component {
   handleFormSubmit(formProps) {
-    this.props.loginUser(formProps);
+    this.props.loginUser(formProps)
   }
 
   renderAlert() {
@@ -19,12 +19,12 @@ class Login extends Component {
         <div>
           <span><strong>Error!</strong> {this.props.errorMessage}</span>
         </div>
-      );
+      )
     }
   }
 
   render() {
-    const { handleSubmit } = this.props;
+    const { handleSubmit } = this.props
 
     return (
       <div>
@@ -42,7 +42,7 @@ class Login extends Component {
         </form>
         <Link to="/forgot-password">Forgot Password?</Link>
       </div>
-    );
+    )
   }
 }
 
@@ -51,7 +51,7 @@ function mapStateToProps(state) {
     errorMessage: state.auth.error,
     message: state.auth.message,
     authenticated: state.auth.authenticated
-  };
+  }
 }
 
-export default connect(mapStateToProps, { loginUser })(form(Login));
+export default connect(mapStateToProps, { loginUser })(form(Login))

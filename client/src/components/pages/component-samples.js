@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import PricingTable from '../sales/pricing-table';
-import SocialMediaBar from '../sales/social-media-bar';
-import Rotator from '../sales/rotator';
+import PricingTable from '../sales/pricing-table'
+import SocialMediaBar from '../sales/social-media-bar'
+import Rotator from '../sales/rotator'
 
-const bronzeFeatures = ["Really cool", "Pretty cheap", "Awesome"];
-const silverFeatures = ["A couple features", "Pretty neat"];
-const goldFeatures = ["A bit cooler yet"];
+const bronzeFeatures = ["Really cool", "Pretty cheap", "Awesome"]
+const silverFeatures = ["A couple features", "Pretty neat"]
+const goldFeatures = ["A bit cooler yet"]
 const social = [
   {
     name: "Facebook",
@@ -18,7 +18,7 @@ const social = [
     href: "http://twitter.com/",
     img: "http://localhost:8080/src/public/img/icons/twitter.svg"
   }
-];
+]
 
 const rotators = [
   {
@@ -33,7 +33,7 @@ const rotators = [
     text: 'MERN stack is pretty cool.',
     author: 'DM'
   }
-];
+]
 
 class ComponentSamplesPage extends Component {
   render() {
@@ -49,8 +49,8 @@ class ComponentSamplesPage extends Component {
 
         <Rotator rotators={rotators} />
       </div>
-    );
+    )
   }
 }
 
-export default ComponentSamplesPage;
+export default ComponentSamplesPage

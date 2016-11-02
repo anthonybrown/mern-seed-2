@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router';
+import React, { Component } from 'react'
+import { Link } from 'react-router'
 
 class PricingTable extends Component {
   render() {
@@ -26,8 +26,8 @@ class PricingTable extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default PricingTable;
+export default PricingTable

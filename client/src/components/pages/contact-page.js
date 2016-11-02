@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { reduxForm } from 'redux-form';
-import { sendContactForm } from '../../actions/index';
+import React, { Component } from 'react'
+import { reduxForm } from 'redux-form'
+import { sendContactForm } from '../../actions/index'
 
 class ContactPage extends Component {
   handleFormSubmit({ firstName, lastName, emailAddress, subject, message }) {
-    this.props.sendContactForm({ firstName, lastName, emailAddress, subject, message });
+    this.props.sendContactForm({ firstName, lastName, emailAddress, subject, message })
   }
 
   renderAlert() {
@@ -28,7 +28,7 @@ class ContactPage extends Component {
   }
 
   render() {
-    const { handleSubmit, fields: { firstName, lastName, emailAddress, subject, message } } = this.props;
+    const { handleSubmit, fields: { firstName, lastName, emailAddress, subject, message } } = this.props
 
     return (
       <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
@@ -78,17 +78,17 @@ class ContactPage extends Component {
         {this.renderAlert()}
         <button action="submit" className="btn btn-primary">Send</button>
       </form>
-    );
+    )
   }
 }
 
 function mapStateToProps(state) {
   return { errorMessage: state.communication.error,
            message: state.communication.message,
-           authenticated: state.auth.authenticated };
+           authenticated: state.auth.authenticated }
 }
 
 export default reduxForm({
   form: 'contactForm',
   fields: ['firstName', 'lastName', 'emailAddress', 'subject', 'message']
-}, mapStateToProps, { sendContactForm })(ContactPage);
+}, mapStateToProps, { sendContactForm })(ContactPage)

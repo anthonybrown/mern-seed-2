@@ -1,6 +1,6 @@
-const webpack = require('webpack');
-const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack')
+const path = require('path')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const config = {
   context: __dirname,
@@ -40,6 +40,6 @@ const config = {
       allChunks: true
     })
   ]
-};
+}
 
-module.exports = config;
+module.exports = config

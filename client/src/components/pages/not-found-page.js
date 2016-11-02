@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class NotFoundPage extends Component {
 
@@ -12,4 +12,4 @@ class NotFoundPage extends Component {
   }
 }
 
-export default NotFoundPage;
+export default NotFoundPage

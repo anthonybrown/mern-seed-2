@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class RotatorItem extends Component {
   render() {
@@ -14,11 +14,11 @@ class RotatorItem extends Component {
                 <p className="rotator-author">{rotator.author}</p>
               </div>
             </div>
-          );
+          )
         })}
       </div>
-    );
+    )
   }
 }
 
-export default RotatorItem;
+export default RotatorItem

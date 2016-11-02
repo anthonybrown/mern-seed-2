@@ -1,37 +1,37 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router';
-import { connect } from 'react-redux';
-import * as actions from '../../../actions/messaging';
+import React, { Component } from 'react'
+import { Link } from 'react-router'
+import { connect } from 'react-redux'
+import * as actions from '../../../actions/messaging'
 
-import MessageList from './message-list';
-import ReplyMessage from './reply-message';
+import MessageList from './message-list'
+import ReplyMessage from './reply-message'
 
-const socket = actions.socket;
+const socket = actions.socket
 
 class Conversation extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    const { params, fetchConversation } = this.props;
+    const { params, fetchConversation } = this.props
     // Fetch conversation thread (messages to/from user)
-    fetchConversation(params.conversationId);
-    socket.emit('enter conversation', params.conversationId);
+    fetchConversation(params.conversationId)
+    socket.emit('enter conversation', params.conversationId)
 
     // Listen for refresh messages from socket server
     socket.on('refresh messages', function(data) {
-      fetchConversation(params.conversationId);
-    });
+      fetchConversation(params.conversationId)
+    })
   }
 
   componentWillUnmount() {
-    socket.emit('leave conversation', this.props.params.conversationId);
+    socket.emit('leave conversation', this.props.params.conversationId)
   }
 
   renderInbox() {
     if(this.props.messages) {
       return (
         <MessageList displayMessages={this.props.messages} />
-      );
+      )
     }
   }
 
@@ -48,7 +48,7 @@ class Conversation extends Component {
         </div>
         <ReplyMessage replyTo={this.props.params.conversationId} />
       </div>
-    );
+    )
   }
 }
 
@@ -58,4 +58,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, actions)(Conversation);
+export default connect(mapStateToProps, actions)(Conversation)

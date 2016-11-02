@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
-import { fetchRecipients, startConversation } from '../../../actions/messaging';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Field, reduxForm } from 'redux-form'
+import { fetchRecipients, startConversation } from '../../../actions/messaging'
 
 const form = reduxForm({
   form: 'composeMessage',
   validate
-});
+})
 
 function validate(formProps) {
-  const errors = {};
+  const errors = {}
 
   if (!formProps.composedMessage) {
-    errors.password = 'Please enter a message';
+    errors.password = 'Please enter a message'
   }
 
-  return errors;
+  return errors
 }
 
 const renderField = field => (
@@ -23,17 +23,17 @@ const renderField = field => (
       <input className="form-control" autoComplete="off" {...field.input}/>
       {field.touched && field.error && <div className="error">{field.error}</div>}
     </div>
-);
+)
 
 class ComposeMessage extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.props.fetchRecipients();
+    this.props.fetchRecipients()
   }
 
   handleFormSubmit(formProps) {
-    this.props.startConversation(formProps);
+    this.props.startConversation(formProps)
   }
 
   renderRecipients() {
@@ -41,7 +41,7 @@ class ComposeMessage extends Component {
       return (
         this.props.recipients.map(data => <option key={data._id} value={data._id}>
         {data.profile.firstName} {data.profile.lastName}</option>)
-      );
+      )
     }
   }
 
@@ -51,18 +51,18 @@ class ComposeMessage extends Component {
         <div className="alert alert-danger">
           <strong>Oops!</strong> {this.props.errorMessage}
         </div>
-      );
+      )
     } else if (this.props.message) {
       return (
         <div className="alert alert-success">
           <strong>Success!</strong> {this.props.message}
         </div>
-      );
+      )
     }
   }
 
   render() {
-    const { handleSubmit } = this.props;
+    const { handleSubmit } = this.props
 
     return (
       <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
@@ -77,7 +77,7 @@ class ComposeMessage extends Component {
         <Field name="composedMessage" component={renderField} type="text" placeholder="Type here to chat..." />
         <button action="submit" className="btn btn-primary">Send</button>
       </form>
-    );
+    )
   }
 }
 
@@ -88,4 +88,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, { fetchRecipients, startConversation })(form(ComposeMessage));
+export default connect(mapStateToProps, { fetchRecipients, startConversation })(form(ComposeMessage))

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class RotatorNav extends Component {
   renderNav() {
-    let toMap = [];
+    let toMap = []
 
     for (let i = 0; i < this.props.length; i++) {
       toMap.push(
@@ -11,9 +11,9 @@ class RotatorNav extends Component {
         className={i == this.props.active ? "slider-nav-bullet active" : "slider-nav-bullet"}
         onClick={this.props.setPage}
         ></li>
-      );
+      )
     }
-    return toMap;
+    return toMap
   }
 
   render() {
@@ -21,8 +21,8 @@ class RotatorNav extends Component {
       <ul>
         {this.renderNav()}
       </ul>
-    );
+    )
   }
 }
 
-export default RotatorNav;
+export default RotatorNav

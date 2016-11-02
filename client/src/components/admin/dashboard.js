@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router';
+import React, { Component } from 'react'
+import { Link } from 'react-router'
 
 class AdminDashboard extends Component {
   render() {
@@ -7,8 +7,8 @@ class AdminDashboard extends Component {
       <div>
         Admin navigation goes here.
       </div>
-    );
+    )
   }
 }
 
-export default AdminDashboard;
+export default AdminDashboard

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class ConversationItem extends Component {
   render() {
@@ -10,8 +10,8 @@ class ConversationItem extends Component {
           <span className="message-byline">From {this.props.author} | {this.props.timestamp}</span>
         </a>
       </div>
-    );
+    )
   }
 }
 
-export default ConversationItem;
+export default ConversationItem

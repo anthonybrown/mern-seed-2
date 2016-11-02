@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router';
-import { connect } from 'react-redux';
-import cookie from 'react-cookie';
-import { protectedTest } from '../../actions/auth';
+import React, { Component } from 'react'
+import { Link } from 'react-router'
+import { connect } from 'react-redux'
+import cookie from 'react-cookie'
+import { protectedTest } from '../../actions/auth'
 
 class Dashboard extends Component {
 
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.props.protectedTest();
+    this.props.protectedTest()
   }
 
   isRole(roleToCheck, toRender) {
-    let userRole = cookie.load('user').role;
+    let userRole = cookie.load('user').role
 
     if (userRole == roleToCheck) {
-      return toRender;
+      return toRender
     }
 
-    return false;
+    return false
   }
 
   adminMenu() {
@@ -27,7 +27,7 @@ class Dashboard extends Component {
       <div className="admin-menu">
         <Link to="/admin">Admin</Link>
       </div>
-    );
+    )
   }
 
   ownerMenu() {
@@ -35,7 +35,7 @@ class Dashboard extends Component {
       <div className="trainer-menu">
         Owner menu coming soon.
       </div>
-    );
+    )
   }
 
   clientMenu() {
@@ -43,7 +43,7 @@ class Dashboard extends Component {
       <div className="client-menu">
         Client menu coming soon.
       </div>
-    );
+    )
   }
 
   render() {
@@ -55,12 +55,12 @@ class Dashboard extends Component {
         {this.isRole("Client", this.clientMenu())}
         <p>{this.props.content}</p>
       </div>
-    );
+    )
   }
 }
 
 function mapStateToProps(state) {
-  return { content: state.auth.content };
+  return { content: state.auth.content }
 }
 
-export default connect(mapStateToProps, { protectedTest })(Dashboard);
+export default connect(mapStateToProps, { protectedTest })(Dashboard)
